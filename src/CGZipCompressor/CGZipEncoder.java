@@ -35,30 +35,31 @@ public class CGZipEncoder{
 		}
 		
 	public boolean encodeFile() throws Exception{
-		
-		
+	
 		if(fileName.length() == 0) return false;
-		try{
-		FileInputStream in = new FileInputStream(fileName);
-		GZIPOutputStream out = new GZIPOutputStream(new FileOutputStream(outputFilename));
-		fileLen = in.available();
-		if(fileLen == 0 ) throw new Exception("Source File Empty!");
-		gSummary += "Original Size : " + fileLen + "\n";
 
-		byte[] buf = new byte[1024];
-		int len;
-		while ((len = in.read(buf)) > 0) {
-		out.write(buf, 0, len);
-		}
-		in.close();
-		out.finish();
-		out.close();
-		outputFilelen =  new File(outputFilename).length();
-		float cratio = (float)(((outputFilelen)*100)/(float)fileLen);
-		gSummary += ("Compressed File Size : " + outputFilelen + "\n");
-		gSummary += ("Compression Ratio : " + cratio + "%" + "\n");
+			try{
+				FileInputStream in = new FileInputStream(fileName);
+				GZIPOutputStream out = new GZIPOutputStream(new FileOutputStream(outputFilename));
+				fileLen = in.available();
+				if(fileLen == 0 ) throw new Exception("Source File Empty!");
+				gSummary += "Original Size : " + fileLen + "\n";
 
-		}catch(Exception e){throw e; }
+				byte[] buf = new byte[1024];
+				int len;
+				while ((len = in.read(buf)) > 0) {
+				out.write(buf, 0, len);
+				}
+				in.close();
+				out.finish();
+				out.close();
+				outputFilelen =  new File(outputFilename).length();
+				float cratio = (float)(((outputFilelen)*100)/(float)fileLen);
+				gSummary += ("Compressed File Size : " + outputFilelen + "\n");
+				gSummary += ("Compression Ratio : " + cratio + "%" + "\n");
+			}catch(Exception e){
+				throw e;
+			}
 		return true;
 		}
 		
@@ -66,7 +67,6 @@ public class CGZipEncoder{
 	public String getSummary(){
 		return gSummary;
 		}
-
 	}
     
 

@@ -305,15 +305,15 @@ public class Gph extends javax.swing.JFrame implements GphGuiConstants {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-suggestDestination();// TODO add your handling code here:
+suggestDestination();
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-suggestDestination();// TODO add your handling code here:
+suggestDestination();
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
-// TODO add your handling code here:
+
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -330,7 +330,7 @@ suggestDestination();// TODO add your handling code here:
                 suggestDestination();
             }
         }
-// TODO add your handling code here:
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -357,7 +357,7 @@ suggestDestination();// TODO add your handling code here:
             	    	}
         }
         
-// TODO add your handling code here:
+
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -365,7 +365,7 @@ suggestDestination();// TODO add your handling code here:
         algoSelected = jComboBox1.getSelectedIndex();
         suggestDestination();
         
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
@@ -408,21 +408,21 @@ suggestDestination();// TODO add your handling code here:
         dlg.doWork(jTextField1.getText(),jTextField2.getText(),mode,algoSelected);
         log(dlg.getSummary());
         
-// TODO add your handling code here:
+
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         clearDetails();
         jRadioButton1.setSelected(true);
-// TODO add your handling code here:
+
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
-// TODO add your handling code here:
+
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-// TODO add your handling code here:
+
     }//GEN-LAST:event_formWindowActivated
     	void log(String stuff){
 		if(jTextArea1.getDocument().getLength() > 3000) jTextArea1.setText(REFRESH);

@@ -4,8 +4,6 @@ package FileBitIO;
 import java.io.*;
 import CLZWCompressor.*;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
 import wingph.*;
 
 
@@ -15,7 +13,6 @@ public class GphWorkingDlg extends javax.swing.JDialog implements GphGuiConstant
     private String gSummary = "";
 	private String iFilename,oFilename;
 	private boolean bCompress = false;
-	private int algoSelected;
     
     /** Creates new form GphWorkingDlg */
     public GphWorkingDlg(java.awt.Frame parent, boolean modal) {
@@ -42,7 +39,6 @@ public class GphWorkingDlg extends javax.swing.JDialog implements GphGuiConstant
 		}
     
     void doWork(String inputFilename,String outputFilename,int mode,int algorithm){
-		String buf;
 		File infile = new File(inputFilename);
 		System.out.println(inputFilename);
 		//chk if file exists

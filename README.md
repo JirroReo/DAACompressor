@@ -22,7 +22,8 @@ Important folders/file in this project:
 
 ## Course Details
 * **Course Name** :         Design and Analysis of Algorithms
-* **College**     :         College of Computer and Information Sciences, PUP Manila
+* **College**     :         College of Computer and Information Sciences
+* **University**  :         Polytechnic University of the Philippines - Manila
 * **Algorithm**   :         Huffman Coding
 
 ## Authors

@@ -6,7 +6,7 @@ import CLZWCompressor.*;
 import javax.swing.*;
 import wingph.*;
 
-
+//GUI Stuff, doesnt really concern the algorithm
 public class GphWorkingDlg extends javax.swing.JDialog implements GphGuiConstants{
     
     

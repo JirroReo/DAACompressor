@@ -42,13 +42,16 @@ public class CGZipEncoder{
 				FileInputStream in = new FileInputStream(fileName);
 				GZIPOutputStream out = new GZIPOutputStream(new FileOutputStream(outputFilename));
 				fileLen = in.available();
-				if(fileLen == 0 ) throw new Exception("Source File Empty!");
+				if(fileLen == 0 ){
+					in.close();
+					out.close();
+					throw new Exception("Source File Empty!");
+				}
 				gSummary += "Original Size : " + fileLen + "\n";
-
 				byte[] buf = new byte[1024];
 				int len;
-				while ((len = in.read(buf)) > 0) {
-				out.write(buf, 0, len);
+				while ((len = in.read(buf)) > 0){
+					out.write(buf, 0, len);
 				}
 				in.close();
 				out.finish();

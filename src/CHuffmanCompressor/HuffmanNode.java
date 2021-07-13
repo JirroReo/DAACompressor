@@ -1,10 +1,10 @@
 
 package CHuffmanCompressor;
 
-
+//Custom class to store our symbols in with their frequencies
 public class HuffmanNode{
 	
-	HuffmanNode left,right;
+	HuffmanNode left,right; //Children
 	public long freq;
 	public char ch;
 	
@@ -12,7 +12,7 @@ public class HuffmanNode{
 	public String huffCode;
 	
 	
-	public HuffmanNode(){
+	public HuffmanNode(){//default constructor
 		freq = 0;
 		ch = 0;
 		huffCode = "";
@@ -25,7 +25,7 @@ public class HuffmanNode{
 		left = lchild;
 		right = rchild;
 		huffCode = "";
-		}
+		} //constructor with initializers, used more often idek why i made a default constuctor
 
 	
 }

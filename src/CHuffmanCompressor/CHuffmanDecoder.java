@@ -8,15 +8,15 @@ import FileBitIO.*;
 public class CHuffmanDecoder implements huffmanSignature{
 
 	
-	private String fileName,outputFilename;
-	private String[] hCodes = new String[MAXCHARS];
-	private int distinctChars = 0;
-	private long fileLen=0,outputFilelen;
+	private String fileName,outputFilename; //Filename for input file, outputFilename for output
+	private String[] hCodes = new String[MAXCHARS]; //where we'll put the huffman codes we'll get from the file
+	private int distinctChars = 0; //distinct characters counter
+	private long fileLen=0,outputFilelen; //length of both input and output files
 	
-	private FileOutputStream outf;
-	private String gSummary;
+	private FileOutputStream outf; //writer for output file
+	private String gSummary; //summary string, used for after processing
 
-	
+	//These functions use loadFile to read the file from the GUI, loadFile is explained below
 	public CHuffmanDecoder(){
 		loadFile("","");
 		}
@@ -27,16 +27,17 @@ public class CHuffmanDecoder implements huffmanSignature{
 		loadFile(txt,txt2);
 		}
 		
-	public void loadFile(String txt){
-		fileName = txt;
-		outputFilename = stripExtension(txt,strExtension);
+	public void loadFile(String txt){ //loads file if only 1 arg is passed
+		fileName = txt; //gets original filename
+		outputFilename = stripExtension(txt,strExtension);  //strExtension is .huf, returns original filename - .huf
 		gSummary = "";
 		}
-	public void loadFile(String txt,String txt2){
+	public void loadFile(String txt,String txt2){ //loads file if 2 args are passed
 		fileName = txt;
-		outputFilename = txt2;
+		outputFilename = txt2; //sets the output file name to the 2nd arg instead of .huf
 		gSummary = "";
 		}
+		//basically removes the extension .huf from the passed file
 	String stripExtension(String ff,String ext){
 		ff = ff.toLowerCase();
 		if(ff.endsWith(ext.toLowerCase())){
@@ -45,18 +46,17 @@ public class CHuffmanDecoder implements huffmanSignature{
 		return "_" + ff;
 		}
 		
-	public boolean decodeFile() throws Exception{
+	public boolean decodeFile() throws Exception{ //Main decoding function ansakit na ng likod ko shet
 		
+		if(fileName.length() == 0) return false; //if file is empty, return
 		
-		if(fileName.length() == 0) return false;
-		
-		for(int i=0;i<MAXCHARS;i++) hCodes[i] = "";
+		for(int i=0;i<MAXCHARS;i++) hCodes[i] = ""; //set hCodes to empty just to be sure
 		long i;
-		CFileBitReader fin = new CFileBitReader(fileName);
+		CFileBitReader fin = new CFileBitReader(fileName); //Readers to read the file contents
 		fileLen = fin.available();
 
 		String buf;
-		buf = fin.getBytes(hSignature.length());
+		buf = fin.getBytes(hSignature.length()); //gets the length of the passed file in bytes, so we'll know when to stop
 		
 		if(!buf.equals(hSignature)) return false;
 		outputFilelen = Long.parseLong(fin.getBits(32),2);
@@ -79,9 +79,9 @@ public class CHuffmanDecoder implements huffmanSignature{
 		int k;
 		int ch;
 		
-		while(i < outputFilelen){	
+		while(i < outputFilelen){	//main decoder, uses a findCodeWord function for each 1s and 0s sequence in the file
 				buf = "";
-				for(k=0;k<32;k++){
+				for(k=0;k<32;k++){ //32 because strings are 32 bits because we pad them with 0s
 					buf += fin.getBit();
 					ch  = findCodeword(buf);
 						if(ch > -1){
@@ -91,7 +91,7 @@ public class CHuffmanDecoder implements huffmanSignature{
 							break;
 						}
 					}
-				if(k >=32 ) throw new Exception("Corrupted File!");
+				if(k >=32 ) throw new Exception("Corrupted File!");  //if the string has more than 32 bits then something's wrong
 				
 			}
 		
@@ -105,7 +105,7 @@ public class CHuffmanDecoder implements huffmanSignature{
 
 		}
 		
-	int findCodeword(String cw){
+	int findCodeword(String cw){ //main decoder of the character from the 1s and 0s sakit na talaga ng likod ko 
 		int ret = -1;
 		for(int i=0;i<MAXCHARS;i++){
 			if(hCodes[i] != "" && cw.equals(hCodes[i])){

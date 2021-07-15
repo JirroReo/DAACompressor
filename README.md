@@ -20,13 +20,13 @@ Important folders/file in this project:
 - `src/CLZWCompressor/` : This is where the files for ZLW algorithm are
 - `src/CRLECompressor/` : The files for RLE algorithm can be found here
 
-## Course Details
+### Course Details
 * **Course Name** :         Design and Analysis of Algorithms
 * **College**     :         College of Computer and Information Sciences
 * **University**  :         Polytechnic University of the Philippines - Manila
 * **Algorithm**   :         Huffman Coding
 
-## Authors
+### Authors
 * Cervantes, Vern
 * Concepcion, Freanne Lei
 * De Guzman, Aaron Bien

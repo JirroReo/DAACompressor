@@ -207,7 +207,7 @@ public class CHuffmanEncoder implements huffmanSignature{
 	
 	String leftPadder(String txt,int n){
 		while(txt.length() < n )
-			txt =  "0" + txt;
+			txt =  "0" + txt; 
 		return txt;
 		}
 	

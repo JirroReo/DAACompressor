@@ -91,7 +91,7 @@ public class CHuffmanDecoder implements huffmanSignature{
 							break;
 						}
 					}
-				if(k >=32 ) throw new Exception("Corrupted File!");  //if the string has more than 32 bits then something's wrong
+				if(k >=32 ) throw new Exception("Corrupted File!");  //if the character has more than 32 bits then something's wrong
 				
 			}
 		
@@ -105,7 +105,7 @@ public class CHuffmanDecoder implements huffmanSignature{
 
 		}
 		
-	int findCodeword(String cw){ //main decoder of the character from the 1s and 0s sakit na talaga ng likod ko 
+	int findCodeword(String cw){ //main decoder of the character from the 1s and 0s
 		int ret = -1;
 		for(int i=0;i<MAXCHARS;i++){
 			if(hCodes[i] != "" && cw.equals(hCodes[i])){

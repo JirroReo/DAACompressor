@@ -46,7 +46,7 @@ public class CHuffmanDecoder implements huffmanSignature{
 		return "_" + ff;
 		}
 		
-	public boolean decodeFile() throws Exception{ //Main decoding function ansakit na ng likod ko shet
+	public boolean decodeFile() throws Exception{ //Main decoding function
 		
 		if(fileName.length() == 0) return false; //if file is empty, return
 		

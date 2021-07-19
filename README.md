@@ -27,9 +27,13 @@ Important folders/file in this project:
 * **Algorithm**   :         Huffman Coding
 
 ### Authors
-* Cervantes, Vern
-* Concepcion, Freanne Lei
-* De Guzman, Aaron Bien
-* Glico, Jerico
-* Reoloso, Jirro Dave
+
+| Name               | Contact                                                             |
+|----------------------------|-----------------------------------------------------------------------------|
+| Cervantes, Vern            |   <!-- Put your contact info here -->                                                        |
+| Concepcion, Freanne Lei    |   <!-- Put your contact info here -->                                                        |
+| De Guzman, Aaron Bien      |   <!-- Put your contact info here -->                                                        |
+| Glico, Jerico              |   <!-- Put your contact info here -->                                                        |
+| Reoloso, Jirro             | [Twitter](twitter.com/xreoji) [Instagram](instagram.com/oreojio) [Email](riyujiro@gmail.com) |
+
 
